@@ -1,0 +1,376 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/> <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AK Hospital — Compassionate Care, Advanced Medicine</title>
+  <meta name="description" content="AK Hospital - Comprehensive healthcare with experienced doctors, modern facilities and 24/7 emergency care." />
+  <style>
+    /* Reset & base */
+    :root{
+      --bg:#f6f9fb;--card:#ffffff;--muted:#6b7280;--accent:#0b74de;--accent-2:#0ea5a4;--shadow: 0 6px 18px rgba(11,116,222,0.08);
+      --glass: rgba(255,255,255,0.6);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);color:#0f172a}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Layout */
+    .container{max-width:1200px;margin:40px auto;padding:24px}
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start}
+
+    /* Sidebar scroller */
+    .sidebar{position:sticky;top:28px;background:linear-gradient(180deg,var(--card),#f9fbff);border-radius:12px;padding:18px;box-shadow:var(--shadow);height:calc(100vh - 56px);overflow:auto}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+    .hospital-name{font-weight:700;font-size:15px}
+    .sidebar nav a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted);margin:6px 0}
+    .sidebar nav a:hover{background:#eef6ff;color:var(--accent);font-weight:600}
+
+    /* Main area */
+    .main{padding:20px;background:transparent}
+    .hero{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin-bottom:20px}
+    .hero-left{flex:1;min-width:280px}
+    .kicker{display:inline-block;padding:6px 10px;background:#e6f4ff;color:var(--accent);border-radius:999px;font-weight:600;font-size:13px}
+    h1{font-size:28px;margin:12px 0 8px}
+    p.lead{color:var(--muted);line-height:1.6}
+    .cta{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 6px 20px rgba(11,116,222,0.18)}
+    .btn-outline{background:transparent;border:1px solid #dbeafe;color:var(--accent);}
+
+    .hero-right{width:380px;min-width:260px}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+
+    /* Doctors grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+    .doctor{display:flex;gap:12px;align-items:flex-start}
+    .avatar{width:76px;height:76px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e6f4ff,#eefdfb);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px}
+    .doc-info h3{margin:0;font-size:16px}
+    .role{font-size:13px;color:var(--accent-2);margin-top:6px;font-weight:700}
+    .contact{font-size:13px;color:var(--muted);margin-top:8px}
+
+    /* Services + about */
+    .section{margin-top:32px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .service{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:10px;box-shadow:0 6px 14px rgba(14,165,164,0.04)}
+    .service h4{margin:8px 0 4px}
+
+    /* Team */
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+    .team-member{background:var(--card);padding:12px;border-radius:10px;text-align:center;box-shadow:var(--shadow)}
+    .member-role{font-size:13px;color:var(--muted)}
+
+    /* Contact/appointment */
+    form label{display:block;font-size:13px;margin-top:8px;color:var(--muted)}
+    form input, form textarea, form select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef9;margin-top:6px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+    footer{margin-top:36px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* small screens */
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr;}
+      .sidebar{position:relative;height:auto}
+      .hero-right{order:3;width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="layout">
+      <!-- SIDEBAR / SCROLLER -->
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand">
+          <div class="logo">AK</div>
+          <div>
+            <div class="hospital-name">AK Hospital</div>
+            <div style="font-size:12px;color:var(--muted)">Care • Trust • Healing</div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#doctors">Doctors</a>
+          <a href="#team">Our Team</a>
+          <a href="#appointments">Appointments</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="margin-top:18px;border-top:1px solid #f0f4ff;padding-top:14px">
+          <strong style="display:block">Emergency 24/7</strong>
+          <div style="font-size:20px;color:var(--accent);font-weight:800;margin-top:6px">+91 98765 43210</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:8px">Visit our ER any time or call for ambulance.</div>
+        </div>
+
+        <div style="margin-top:18px;border-top:1px solid #f0f4ff;padding-top:14px">
+          <strong style="display:block">Quick Links</strong>
+          <a href="#insurance" style="display:block;margin-top:8px;color:var(--muted)">Insurance Partners</a>
+          <a href="#careers" style="display:block;margin-top:6px;color:var(--muted)">Careers</a>
+          <a href="#faq" style="display:block;margin-top:6px;color:var(--muted)">FAQ</a>
+        </div>
+
+        <small style="display:block;margin-top:14px;color:var(--muted)">AK Hospital — 12 Health Street, City, State</small>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <!-- HERO -->
+        <section id="home" class="hero">
+          <div class="hero-left">
+            <span class="kicker">Trusted Care Since 1998</span>
+            <h1>AK Hospital — Compassionate care with modern medicine</h1>
+            <p class="lead">We combine experienced specialists, advanced diagnostics and a patient-first approach to provide comprehensive healthcare for you and your family. Our focus is on safe, effective treatment and continuity of care.</p>
+            <div class="cta">
+              <button class="btn btn-primary" onclick="document.getElementById('appointments').scrollIntoView({behavior:'smooth'})">Book an Appointment</button>
+              <a class="btn btn-outline" href="#doctors">Meet Our Doctors</a>
+            </div>
+
+            <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+              <div style="display:flex;align-items:center;gap:8px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M3 7h18M3 12h12M3 17h18" stroke="#0b74de" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="font-size:13px;color:var(--muted)">Free consultation on first visit</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M21 10c0 7-9 11-9 11s-9-4-9-11a9 9 0 1 1 18 0z" stroke="#0ea5a4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="font-size:13px;color:var(--muted)">Accredited labs & imaging</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="card">
+              <strong>Quick Symptom Checker</strong>
+              <p style="color:var(--muted);font-size:13px;margin:10px 0 12px">Tell us about a symptom and we'll suggest a department & next step.</p>
+              <form onsubmit="event.preventDefault(); alert('Thank you — our team will review your response and reach out.');">
+                <label>Symptom</label>
+                <input type="text" placeholder="e.g. chest pain, fever, sore throat" required>
+                <label>Duration</label>
+                <select>
+                  <option>Less than 24 hours</option>
+                  <option>1-3 days</option>
+                  <option>More than 3 days</option>
+                </select>
+                <label>Phone / WhatsApp</label>
+                <input type="tel" placeholder="+91 9XXXXXXXXX">
+                <div style="margin-top:12px;text-align:right">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+          <div class="card">
+            <h2>About AK Hospital</h2>
+            <p style="color:var(--muted)">AK Hospital is a multi-speciality centre providing tertiary care to the community. We offer emergency services, surgery, maternity care, pediatrics, cardiology, orthopedics and more. Our mission is to deliver evidence-based medicine with empathy and respect.</p>
+            <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+              <div style="min-width:160px;background:#fbfdff;padding:12px;border-radius:8px">24/7 Emergency</div>
+              <div style="min-width:160px;background:#fbfdff;padding:12px;border-radius:8px">Diagnostic Lab & Imaging</div>
+              <div style="min-width:160px;background:#fbfdff;padding:12px;border-radius:8px">Pharmacy & Rehabilitation</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section">
+          <h2>Our Services</h2>
+          <div class="services">
+            <div class="service"><h4>Cardiology</h4><p class="muted" style="font-size:13px">ECG, Echo, Interventional cardiology & cardiac rehab.</p></div>
+            <div class="service"><h4>Orthopedics</h4><p class="muted" style="font-size:13px">Joint replacement, sports injury & physiotherapy.</p></div>
+            <div class="service"><h4>General Surgery</h4><p class="muted" style="font-size:13px">Laparoscopic & open surgery, day care procedures.</p></div>
+            <div class="service"><h4>Maternity & Neonatology</h4><p class="muted" style="font-size:13px">High-risk pregnancy care & NICU support.</p></div>
+            <div class="service"><h4>Pediatrics</h4><p class="muted" style="font-size:13px">Well-child care, immunizations & emergency pediatrics.</p></div>
+            <div class="service"><h4>Radiology & Lab</h4><p class="muted" style="font-size:13px">CT, MRI, X-ray and accredited pathology services.</p></div>
+          </div>
+        </section>
+
+        <!-- DOCTORS -->
+        <section id="doctors" class="section">
+          <h2>Our Doctors</h2>
+          <p style="color:var(--muted);margin-top:6px">Experienced consultants across specialties. Call or email to book a consultation.</p>
+
+          <div class="grid">
+            <!-- Doctor 1 -->
+            <div class="card doctor">
+              <div class="avatar">DR</div>
+              <div class="doc-info">
+                <h3>Dr. Rakesh Sharma, MBBS, MD</h3>
+                <div class="role">Consultant — Cardiology</div>
+                <div class="contact">Email: rakesh.sharma@akhospital.com<br>Phone: +91 98765 11111</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">Expert in interventional cardiology and heart failure management. 20+ years experience.</div>
+              </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="card doctor">
+              <div class="avatar">SM</div>
+              <div class="doc-info">
+                <h3>Dr. Sneha Mehra, MBBS, MS</h3>
+                <div class="role">Consultant — General Surgery</div>
+                <div class="contact">Email: sneha.mehra@akhospital.com<br>Phone: +91 98765 22222</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">Laparoscopic surgeon with special interest in minimally invasive procedures and surgical oncology.</div>
+              </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="card doctor">
+              <div class="avatar">AK</div>
+              <div class="doc-info">
+                <h3>Dr. Amit Kapoor, MBBS, DNB</h3>
+                <div class="role">Consultant — Orthopedics</div>
+                <div class="contact">Email: amit.kapoor@akhospital.com<br>Phone: +91 98765 33333</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">Joint replacement surgeon focusing on hip & knee arthroplasty and sports injuries.</div>
+              </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="card doctor">
+              <div class="avatar">PS</div>
+              <div class="doc-info">
+                <h3>Dr. Pooja Sen, MBBS, MD</h3>
+                <div class="role">Consultant — Pediatrics</div>
+                <div class="contact">Email: pooja.sen@akhospital.com<br>Phone: +91 98765 44444</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">Pediatrician experienced in neonatology and preventive child health care.</div>
+              </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="card doctor">
+              <div class="avatar">MV</div>
+              <div class="doc-info">
+                <h3>Dr. Meera Verma, MBBS, MD</h3>
+                <div class="role">Consultant — Obstetrics & Gynaecology</div>
+                <div class="contact">Email: meera.verma@akhospital.com<br>Phone: +91 98765 55555</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">High-risk pregnancy management and minimally invasive gyne surgery.</div>
+              </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="card doctor">
+              <div class="avatar">RK</div>
+              <div class="doc-info">
+                <h3>Dr. Ritu Kapoor, MBBS, MD</h3>
+                <div class="role">Consultant — Radiology</div>
+                <div class="contact">Email: ritu.kapoor@akhospital.com<br>Phone: +91 98765 66666</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--muted)">Head of imaging services: CT, MRI, Ultrasound and reporting.</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TEAM -->
+        <section id="team" class="section">
+          <h2>Support Team</h2>
+          <p style="color:var(--muted);margin-top:6px">Our multidisciplinary team keeps the hospital running — from nursing to administration.</p>
+          <div class="team-grid" style="margin-top:12px">
+            <div class="team-member">
+              <div style="font-weight:800;font-size:20px">N.S.</div>
+              <div style="margin-top:8px;font-weight:700">Nurse Sunita</div>
+              <div class="member-role">Head Nurse — ICU<br>sunita.nurse@akhospital.com<br>+91 98765 77777</div>
+            </div>
+            <div class="team-member">
+              <div style="font-weight:800;font-size:20px">A.M.</div>
+              <div style="margin-top:8px;font-weight:700">Amit Mishra</div>
+              <div class="member-role">Hospital Administrator<br>amit.mishra@akhospital.com<br>+91 98765 88888</div>
+            </div>
+            <div class="team-member">
+              <div style="font-weight:800;font-size:20px">L.P.</div>
+              <div style="margin-top:8px;font-weight:700">Lab Incharge — Lata</div>
+              <div class="member-role">lab@akhospital.com<br>+91 98765 99999</div>
+            </div>
+            <div class="team-member">
+              <div style="font-weight:800;font-size:20px">M.K.</div>
+              <div style="margin-top:8px;font-weight:700">Mr. Khatri</div>
+              <div class="member-role">Pharmacy Manager<br>pharmacy@akhospital.com<br>+91 98765 00001</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- APPOINTMENTS -->
+        <section id="appointments" class="section">
+          <h2>Book an Appointment</h2>
+          <div class="card" style="margin-top:10px">
+            <form onsubmit="bookAppointment(event)">
+              <div class="two-col">
+                <div>
+                  <label>Full name</label>
+                  <input id="patientName" required>
+                </div>
+                <div>
+                  <label>Phone</label>
+                  <input id="patientPhone" type="tel" required>
+                </div>
+              </div>
+
+              <label>Email</label>
+              <input id="patientEmail" type="email">
+
+              <label>Department / Doctor (optional)</label>
+              <input id="patientDoctor" placeholder="e.g. Cardiology / Dr. Rakesh Sharma">
+
+              <label>Preferred date & time</label>
+              <input id="patientDate" type="datetime-local">
+
+              <div style="margin-top:12px;text-align:right">
+                <button class="btn btn-primary" type="submit">Request Appointment</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+          <h2>Contact & Location</h2>
+          <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px">
+            <div class="card">
+              <p style="color:var(--muted)">AK Hospital, 12 Health Street, City Name, State — Open 24/7 for emergencies. For appointments and general enquiries, reach us using the details below.</p>
+              <p><strong>Phone:</strong> +91 98765 43210<br><strong>Email:</strong> info@akhospital.com</p>
+
+              <h4 style="margin-top:12px">Insurance & Billing</h4>
+              <p style="color:var(--muted);font-size:13px">We accept major private and government health insurance plans. Contact billing for pre-authorisation and cashless claims.</p>
+            </div>
+
+            <div class="card">
+              <strong>Send a message</strong>
+              <form onsubmit="event.preventDefault(); alert('Message sent. Our team will contact you soon.');">
+                <label>Name</label>
+                <input required>
+                <label>Email</label>
+                <input type="email" required>
+                <label>Message</label>
+                <textarea rows="4" required></textarea>
+                <div style="margin-top:10px;text-align:right">
+                  <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          © <span id="year"></span> AK Hospital — All rights reserved. &nbsp;|&nbsp; Designed for compassionate healthcare
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // small JS helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function bookAppointment(e){}
+      e.preventDefault();
+      const name = document.getElementById('patientName').value || 'Patient';
+      const phone = document.getElementById('patientPhone').value || 'not provided';
+      const email = document.getElementById('patientEmail').value || 'not provided';
+      // In real site: submit to server or call API
+      alert(`Thank you ${name}! Appointment request received.\nPhone: ${phone}\nEmail
